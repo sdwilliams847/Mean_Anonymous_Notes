@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="navbar">
+        <h1>Ananymous Notes</h1>
+    </div>
+
+    <div class="row">
+            <fieldset>   
+                <form (submit)="newNote()">
+                      Note: <input type="text" name="addNote.note" [(ngModel)]="addNote.note"> &nbsp;
+                      <input type="submit" value="Add Note">
+                </form>
+            </fieldset>
+    </div><br>
+
+    <div class="row"*ngFor="let note of notes">
+            <fieldset>
+                <h5>{{ note.note }} </h5>
+                <p>written on: {{note.createdAt | date:"medium"}}</p>
+            </fieldset>
+    </div>
+
+</div>
